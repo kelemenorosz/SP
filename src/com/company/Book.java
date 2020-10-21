@@ -8,7 +8,7 @@ public class Book {
     private String name;
     private Author author;
 
-    private ArrayList<Chapter> chapters = new ArrayList<Chapter>();
+    private ArrayList<Element> elements = new ArrayList<Element>();
 
     public Book(String name) {
         this.name = name;
@@ -24,16 +24,11 @@ public class Book {
 
     public void print() {
         System.out.print(this);
-        System.out.print(chapters);
+        System.out.print(elements);
     }
 
-    public int createChapter(String chapterName) {
-        Chapter tempC = new Chapter(chapterName);
-        chapters.add(tempC);
-        return chapters.size() - 1;
+    public void addContent(Element content) {
+        this.elements.add(content);
     }
 
-    public Chapter getChapter(int indexChapterOne) {
-        return chapters.get(indexChapterOne);
-    }
 }
