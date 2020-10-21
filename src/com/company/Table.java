@@ -1,6 +1,6 @@
 package com.company;
 
-public class Table {
+public class Table implements Element{
     private String name;
 
     public Table(String name) {
@@ -10,4 +10,10 @@ public class Table {
     public String toString() {
         return this.name;
     }
+
+    @Override
+    public void print() {
+        System.out.print(this);
+    }
+
 }

@@ -1,6 +1,6 @@
 package com.company;
 
-public class Image {
+public class Image implements Element{
     private String name;
 
     public Image(String name) {
@@ -10,4 +10,10 @@ public class Image {
     public String toString() {
         return this.name;
     }
+
+    @Override
+    public void print() {
+        System.out.print(this);
+    }
+
 }

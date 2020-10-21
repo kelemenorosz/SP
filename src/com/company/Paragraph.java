@@ -1,6 +1,6 @@
 package com.company;
 
-public class Paragraph {
+public class Paragraph implements  Element{
     private String name;
 
     public Paragraph(String name) {
@@ -10,4 +10,10 @@ public class Paragraph {
     public String toString() {
         return this.name;
     }
+
+    @Override
+    public void print() {
+        System.out.print(this);
+    }
+
 }
