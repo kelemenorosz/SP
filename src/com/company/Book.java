@@ -6,38 +6,34 @@ import java.util.ArrayList;
 public class Book {
 
     private String name;
-    private ArrayList<Paragraph> paragraphs = new ArrayList<Paragraph>();
-    private ArrayList<Image> images = new ArrayList<Image>();
-    private ArrayList<Table> tables = new ArrayList<Table>();
+    private Author author;
+
+    private ArrayList<Chapter> chapters = new ArrayList<Chapter>();
 
     public Book(String name) {
         this.name = name;
     }
 
+    public void addAuthor(Author author) {
+        this.author = author;
+    }
+
     public String toString() {
-        return name;
+        return name + " " + author;
     }
 
     public void print() {
         System.out.print(this);
-        System.out.print(paragraphs);
-        System.out.print(images);
-        System.out.print(tables);
+        System.out.print(chapters);
     }
 
-    public void createNewParagraph(String paragraphName) {
-        Paragraph tempP = new Paragraph(paragraphName);
-        paragraphs.add(tempP);
+    public int createChapter(String chapterName) {
+        Chapter tempC = new Chapter(chapterName);
+        chapters.add(tempC);
+        return chapters.size() - 1;
     }
 
-    public void createNewImage(String imageName) {
-        Image tempI = new Image(imageName);
-        images.add(tempI);
+    public Chapter getChapter(int indexChapterOne) {
+        return chapters.get(indexChapterOne);
     }
-
-    public void createNewTable(String tableName) {
-        Table tempT = new Table(tableName);
-        tables.add(tempT);
-    }
-
 }
