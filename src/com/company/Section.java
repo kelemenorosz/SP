@@ -13,7 +13,10 @@ public class Section implements Element{
 
     @Override
     public void print() {
-        System.out.print(this);
+        System.out.println("Section: "+this.name);
+        for(Element i : elements){
+            i.print();
+        }
     }
 
     public String toString() {
