@@ -1,6 +1,10 @@
-package com.company;
+package com.company.models;
 
-public class Paragraph implements Element{
+import com.company.models.Context;
+import com.company.models.Element;
+import com.company.services.AlignStrategy;
+
+public class Paragraph implements Element {
     private String name;
     AlignStrategy strategy;
 
@@ -29,4 +33,8 @@ public class Paragraph implements Element{
         System.out.println(this.toString());
     }
 
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitParagraph(this);
+    }
 }

@@ -1,5 +1,11 @@
 package com.company;
 
+import com.company.models.*;
+import com.company.services.AlignCenter;
+import com.company.services.AlignLeft;
+import com.company.services.AlignRight;
+import com.company.services.RenderContentVisitor;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -28,7 +34,7 @@ public class Main {
         System.out.println("Printing again the section 1 took " + (endTime - startTime) + " milliseconds");*/
 
 
-        Section cap1 = new Section("Capitolul 1");
+      /*  Section cap1 = new Section("Capitolul 1");
         Paragraph p1 = new Paragraph("Paragraph 1");
         cap1.add(p1);
         Paragraph p2 = new Paragraph("Paragraph 2");
@@ -47,7 +53,23 @@ public class Main {
         System.out.println();
         System.out.println("Printing with Alignment");
         System.out.println();
-        cap1.print();
+        cap1.print();*/
+
+        Book playboy = new Book("Playboy");
+        Section cap1 = new Section("Capitolul 1");
+        playboy.addContent(cap1);
+        Paragraph p1 = new Paragraph("Paragraph 1");
+        cap1.add(p1);
+        Paragraph p2 = new Paragraph("Paragraph 2");
+        cap1.add(p2);
+        Paragraph p3 = new Paragraph("Paragraph 3");
+        cap1.add(p3);
+        Paragraph p4 = new Paragraph("Paragraph 4");
+        cap1.add(p4);
+        cap1.add(new Image("ImageTwo"));
+        cap1.add(new Paragraph("Some text"));
+        cap1.add(new Table("Table 1"));
+        new RenderContentVisitor().visitBook(playboy);
 
     }
 }

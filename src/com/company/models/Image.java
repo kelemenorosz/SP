@@ -1,4 +1,4 @@
-package com.company;
+package com.company.models;
 
 import java.util.concurrent.TimeUnit;
 
@@ -22,6 +22,12 @@ public class Image implements Element{
     @Override
     public void print() {
         System.out.print(this.toString());
+    }
+
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitImage(this);
     }
 
 }

@@ -1,6 +1,8 @@
-package com.company;
+package com.company.models;
 
-public class Table implements Element{
+import com.company.models.Element;
+
+public class Table implements Element {
     private String name;
 
     public Table(String name) {
@@ -14,6 +16,11 @@ public class Table implements Element{
     @Override
     public void print() {
         System.out.print(this);
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitTable(this);
     }
 
 }

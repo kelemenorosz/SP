@@ -1,6 +1,5 @@
-package com.company;
+package com.company.models;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Book {
@@ -26,6 +25,8 @@ public class Book {
         System.out.print(this);
         System.out.print(elements);
     }
+
+    public ArrayList<Element> getElements() {return this.elements;}
 
     public void addContent(Element content) {
         this.elements.add(content);

@@ -1,8 +1,10 @@
-package com.company;
+package com.company.models;
+
+import com.company.models.Element;
 
 import java.util.ArrayList;
 
-public class Section implements Element{
+public class Section implements Element {
 
     private String name;
     private ArrayList<Element> elements = new ArrayList<Element>();
@@ -32,4 +34,12 @@ public class Section implements Element{
         this.elements.remove(element);
     }
 
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitSection(this);
+    }
+
+    public ArrayList<Element> getElements() {
+        return elements;
+    }
 }

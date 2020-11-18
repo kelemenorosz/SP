@@ -1,6 +1,5 @@
-package com.company;
+package com.company.models;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class SubChapter {

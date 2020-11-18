@@ -1,4 +1,7 @@
-package com.company;
+package com.company.services;
+
+import com.company.models.Paragraph;
+import com.company.models.Context;
 
 public class AlignLeft implements AlignStrategy {
     @Override
