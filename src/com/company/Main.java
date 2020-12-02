@@ -1,10 +1,7 @@
 package com.company;
 
 import com.company.models.*;
-import com.company.services.AlignCenter;
-import com.company.services.AlignLeft;
-import com.company.services.AlignRight;
-import com.company.services.RenderContentVisitor;
+import com.company.services.*;
 
 public class Main {
 
@@ -69,7 +66,12 @@ public class Main {
         cap1.add(new Image("ImageTwo"));
         cap1.add(new Paragraph("Some text"));
         cap1.add(new Table("Table 1"));
-        new RenderContentVisitor().visitBook(playboy);
+
+        /*new RenderContentVisitor().visitBook(playboy);*/
+
+        StatisticsVisitor stats = new StatisticsVisitor();
+        cap1.accept(stats);
+        stats.printStatistics();
 
     }
 }
